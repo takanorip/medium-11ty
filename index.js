@@ -49,6 +49,9 @@ const converter = async (input, output) => {
           })
         }
 
+        // Remove title
+        document.querySelector('.graf--title').innerHTML = '';
+
         // Convert H3 tag to H2
         convertTag('h3', 'h2');
 
@@ -92,6 +95,8 @@ tags:
   - blog
 layout: layouts/blog.njk
 ---
+
+[[toc]]
 
 `
 
