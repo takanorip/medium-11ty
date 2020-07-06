@@ -1,20 +1,20 @@
 const TurndownService = require('turndown');
-const jsdom = require("jsdom");
+const { JSDOM } = require("jsdom");
 const fs = require('fs');
 const fsPromises = fs.promises;
 const minimist = require('minimist');
+
+const argv = minimist(process.argv.slice(2));
+const inputPath = argv.input
+const outputPath = argv.output
+const eleventyTagName = argv.tagName
+const layoutPath = argv.layout
 
 const turndownService = new TurndownService({
   bulletListMarker: '-',
   headingStyle: 'atx',
   codeBlockStyle: 'fenced',
 })
-turndownService.keep(['br'])
-const { JSDOM } = jsdom;
-const argv = minimist(process.argv.slice(2));
-
-const inputPath = argv.input
-const outputPath = argv.output
 
 const converter = async (input, output) => {
   try {
@@ -92,8 +92,8 @@ const converter = async (input, output) => {
 title: ${title}
 date: ${date}
 tags:
-  - blog
-layout: layouts/blog.njk
+  - ${!eleventyTagName ? 'blog' : eleventyTagName}
+layout: ${!layoutPath ? 'layouts/blog.njk' : layoutPath}
 ---
 
 [[toc]]
