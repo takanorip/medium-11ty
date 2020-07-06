@@ -1,10 +1,13 @@
 {
   "name": "medium-11ty",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "repository": "git://github.com/takanorip/medium-11ty.git",
   "author": "takanorip <takanori0170@gmail.com>",
   "license": "MIT",
+  "bin": {
+    "medium-11ty": "./index.js"
+  },
   "dependencies": {
     "jsdom": "^16.2.2",
     "minimist": "^1.2.5",
