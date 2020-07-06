@@ -2,12 +2,9 @@
   "name": "medium-11ty",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/takanorip/medium-11ty.git",
-  "author": "takanori <takanori0170@gmail.com>",
+  "repository": "git://github.com/takanorip/medium-11ty.git",
+  "author": "takanorip <takanori0170@gmail.com>",
   "license": "MIT",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "dependencies": {
     "jsdom": "^16.2.2",
     "minimist": "^1.2.5",
