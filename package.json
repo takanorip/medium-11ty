@@ -1,6 +1,6 @@
 {
   "name": "medium-11ty",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
   "repository": "git://github.com/takanorip/medium-11ty.git",
   "author": "takanorip <takanori0170@gmail.com>",

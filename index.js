@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const TurndownService = require('turndown');
 const { JSDOM } = require("jsdom");
 const fs = require('fs');
