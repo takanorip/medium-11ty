@@ -73,14 +73,28 @@ const converter = async (input, output) => {
         // Embed
         const figure = document.querySelectorAll('.graf--figure');
         figure.forEach(g => {
-          const tagName = g.childNodes[0].tagName
+          const child = g.childNodes[0];
+          const tagName = child.tagName;
+          const className = child.className;
           if (tagName === "SCRIPT" || tagName === "IFRAME") {
-            const a = document.createElement('a');
             const url = g.childNodes[0].src.replace('.js', '');
+            const a = document.createElement('a');
+            a.href = url;
+            a.text = url;
+            g.previousElementSibling.insertAdjacentHTML('afterend', a.outerHTML);
+          } else if (className === 'twitter-tweet') {
+            const url = child.querySelector('a').href;
+            const a = document.createElement('a');
             a.href = url;
             a.text = url;
             g.previousElementSibling.insertAdjacentHTML('afterend', a.outerHTML);
           }
+        })
+
+        // Twitter
+        const twitterCards = document.querySelectorAll('.twitter-tweet');
+        twitterCards.forEach(t => {
+          const link = t.querySelectorAll('a');
         })
 
         const content = document.querySelector('.section-content').outerHTML
