@@ -110,7 +110,7 @@ layout: layouts/blog.njk
         if (err) throw err;
       }
     })
-  } catch (error) {
+  } catch (err) {
     if (err) throw err;
   }
 }
